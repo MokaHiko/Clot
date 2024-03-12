@@ -1,0 +1,883 @@
+{
+	"folders": [
+		{
+			"name": "Clot",
+			"path": "."
+		},
+		{
+			"name": "UE5",
+			"path": "Z:\\Program Files\\EpicGames\\UE\\UE_5.3"
+		}
+	],
+	"settings": {
+		"typescript.tsc.autoDetect": "off",
+		"npm.autoDetect": "off"
+	},
+	"extensions": {
+		"recommendations": [
+			"ms-vscode.cpptools",
+			"ms-dotnettools.csharp"
+		]
+	},
+	"tasks": {
+		"version": "2.0.0",
+		"tasks": [
+			{
+				"label": "Clot Win64 Debug Build",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"Clot",
+					"Win64",
+					"Debug",
+					"Z:\\Dev\\UE5Games\\Clot\\Clot.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "Z:\\Program Files\\EpicGames\\UE\\UE_5.3"
+				}
+			},
+			{
+				"label": "Clot Win64 Debug Rebuild",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"Clot",
+					"Win64",
+					"Debug",
+					"Z:\\Dev\\UE5Games\\Clot\\Clot.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"Clot Win64 Debug Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "Z:\\Program Files\\EpicGames\\UE\\UE_5.3"
+				}
+			},
+			{
+				"label": "Clot Win64 Debug Clean",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+				"args": [
+					"Clot",
+					"Win64",
+					"Debug",
+					"Z:\\Dev\\UE5Games\\Clot\\Clot.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "Z:\\Program Files\\EpicGames\\UE\\UE_5.3"
+				}
+			},
+			{
+				"label": "Clot Win64 DebugGame Build",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"Clot",
+					"Win64",
+					"DebugGame",
+					"Z:\\Dev\\UE5Games\\Clot\\Clot.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "Z:\\Program Files\\EpicGames\\UE\\UE_5.3"
+				}
+			},
+			{
+				"label": "Clot Win64 DebugGame Rebuild",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"Clot",
+					"Win64",
+					"DebugGame",
+					"Z:\\Dev\\UE5Games\\Clot\\Clot.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"Clot Win64 DebugGame Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "Z:\\Program Files\\EpicGames\\UE\\UE_5.3"
+				}
+			},
+			{
+				"label": "Clot Win64 DebugGame Clean",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+				"args": [
+					"Clot",
+					"Win64",
+					"DebugGame",
+					"Z:\\Dev\\UE5Games\\Clot\\Clot.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "Z:\\Program Files\\EpicGames\\UE\\UE_5.3"
+				}
+			},
+			{
+				"label": "Clot Win64 Development Build",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"Clot",
+					"Win64",
+					"Development",
+					"Z:\\Dev\\UE5Games\\Clot\\Clot.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "Z:\\Program Files\\EpicGames\\UE\\UE_5.3"
+				}
+			},
+			{
+				"label": "Clot Win64 Development Rebuild",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"Clot",
+					"Win64",
+					"Development",
+					"Z:\\Dev\\UE5Games\\Clot\\Clot.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"Clot Win64 Development Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "Z:\\Program Files\\EpicGames\\UE\\UE_5.3"
+				}
+			},
+			{
+				"label": "Clot Win64 Development Clean",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+				"args": [
+					"Clot",
+					"Win64",
+					"Development",
+					"Z:\\Dev\\UE5Games\\Clot\\Clot.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "Z:\\Program Files\\EpicGames\\UE\\UE_5.3"
+				}
+			},
+			{
+				"label": "Clot Win64 Test Build",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"Clot",
+					"Win64",
+					"Test",
+					"Z:\\Dev\\UE5Games\\Clot\\Clot.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "Z:\\Program Files\\EpicGames\\UE\\UE_5.3"
+				}
+			},
+			{
+				"label": "Clot Win64 Test Rebuild",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"Clot",
+					"Win64",
+					"Test",
+					"Z:\\Dev\\UE5Games\\Clot\\Clot.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"Clot Win64 Test Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "Z:\\Program Files\\EpicGames\\UE\\UE_5.3"
+				}
+			},
+			{
+				"label": "Clot Win64 Test Clean",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+				"args": [
+					"Clot",
+					"Win64",
+					"Test",
+					"Z:\\Dev\\UE5Games\\Clot\\Clot.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "Z:\\Program Files\\EpicGames\\UE\\UE_5.3"
+				}
+			},
+			{
+				"label": "Clot Win64 Shipping Build",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"Clot",
+					"Win64",
+					"Shipping",
+					"Z:\\Dev\\UE5Games\\Clot\\Clot.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "Z:\\Program Files\\EpicGames\\UE\\UE_5.3"
+				}
+			},
+			{
+				"label": "Clot Win64 Shipping Rebuild",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"Clot",
+					"Win64",
+					"Shipping",
+					"Z:\\Dev\\UE5Games\\Clot\\Clot.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"Clot Win64 Shipping Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "Z:\\Program Files\\EpicGames\\UE\\UE_5.3"
+				}
+			},
+			{
+				"label": "Clot Win64 Shipping Clean",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+				"args": [
+					"Clot",
+					"Win64",
+					"Shipping",
+					"Z:\\Dev\\UE5Games\\Clot\\Clot.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "Z:\\Program Files\\EpicGames\\UE\\UE_5.3"
+				}
+			},
+			{
+				"label": "Clot IOS Debug Build",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"Clot",
+					"IOS",
+					"Debug",
+					"Z:\\Dev\\UE5Games\\Clot\\Clot.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "Z:\\Program Files\\EpicGames\\UE\\UE_5.3"
+				}
+			},
+			{
+				"label": "Clot IOS Debug Rebuild",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"Clot",
+					"IOS",
+					"Debug",
+					"Z:\\Dev\\UE5Games\\Clot\\Clot.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"Clot IOS Debug Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "Z:\\Program Files\\EpicGames\\UE\\UE_5.3"
+				}
+			},
+			{
+				"label": "Clot IOS Debug Clean",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+				"args": [
+					"Clot",
+					"IOS",
+					"Debug",
+					"Z:\\Dev\\UE5Games\\Clot\\Clot.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "Z:\\Program Files\\EpicGames\\UE\\UE_5.3"
+				}
+			},
+			{
+				"label": "Clot IOS DebugGame Build",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"Clot",
+					"IOS",
+					"DebugGame",
+					"Z:\\Dev\\UE5Games\\Clot\\Clot.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "Z:\\Program Files\\EpicGames\\UE\\UE_5.3"
+				}
+			},
+			{
+				"label": "Clot IOS DebugGame Rebuild",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"Clot",
+					"IOS",
+					"DebugGame",
+					"Z:\\Dev\\UE5Games\\Clot\\Clot.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"Clot IOS DebugGame Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "Z:\\Program Files\\EpicGames\\UE\\UE_5.3"
+				}
+			},
+			{
+				"label": "Clot IOS DebugGame Clean",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+				"args": [
+					"Clot",
+					"IOS",
+					"DebugGame",
+					"Z:\\Dev\\UE5Games\\Clot\\Clot.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "Z:\\Program Files\\EpicGames\\UE\\UE_5.3"
+				}
+			},
+			{
+				"label": "Clot IOS Development Build",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"Clot",
+					"IOS",
+					"Development",
+					"Z:\\Dev\\UE5Games\\Clot\\Clot.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "Z:\\Program Files\\EpicGames\\UE\\UE_5.3"
+				}
+			},
+			{
+				"label": "Clot IOS Development Rebuild",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"Clot",
+					"IOS",
+					"Development",
+					"Z:\\Dev\\UE5Games\\Clot\\Clot.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"Clot IOS Development Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "Z:\\Program Files\\EpicGames\\UE\\UE_5.3"
+				}
+			},
+			{
+				"label": "Clot IOS Development Clean",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+				"args": [
+					"Clot",
+					"IOS",
+					"Development",
+					"Z:\\Dev\\UE5Games\\Clot\\Clot.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "Z:\\Program Files\\EpicGames\\UE\\UE_5.3"
+				}
+			},
+			{
+				"label": "Clot IOS Test Build",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"Clot",
+					"IOS",
+					"Test",
+					"Z:\\Dev\\UE5Games\\Clot\\Clot.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "Z:\\Program Files\\EpicGames\\UE\\UE_5.3"
+				}
+			},
+			{
+				"label": "Clot IOS Test Rebuild",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"Clot",
+					"IOS",
+					"Test",
+					"Z:\\Dev\\UE5Games\\Clot\\Clot.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"Clot IOS Test Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "Z:\\Program Files\\EpicGames\\UE\\UE_5.3"
+				}
+			},
+			{
+				"label": "Clot IOS Test Clean",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+				"args": [
+					"Clot",
+					"IOS",
+					"Test",
+					"Z:\\Dev\\UE5Games\\Clot\\Clot.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "Z:\\Program Files\\EpicGames\\UE\\UE_5.3"
+				}
+			},
+			{
+				"label": "Clot IOS Shipping Build",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"Clot",
+					"IOS",
+					"Shipping",
+					"Z:\\Dev\\UE5Games\\Clot\\Clot.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "Z:\\Program Files\\EpicGames\\UE\\UE_5.3"
+				}
+			},
+			{
+				"label": "Clot IOS Shipping Rebuild",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"Clot",
+					"IOS",
+					"Shipping",
+					"Z:\\Dev\\UE5Games\\Clot\\Clot.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"Clot IOS Shipping Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "Z:\\Program Files\\EpicGames\\UE\\UE_5.3"
+				}
+			},
+			{
+				"label": "Clot IOS Shipping Clean",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+				"args": [
+					"Clot",
+					"IOS",
+					"Shipping",
+					"Z:\\Dev\\UE5Games\\Clot\\Clot.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "Z:\\Program Files\\EpicGames\\UE\\UE_5.3"
+				}
+			},
+			{
+				"label": "ClotEditor Win64 Debug Build",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"ClotEditor",
+					"Win64",
+					"Debug",
+					"Z:\\Dev\\UE5Games\\Clot\\Clot.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "Z:\\Program Files\\EpicGames\\UE\\UE_5.3"
+				}
+			},
+			{
+				"label": "ClotEditor Win64 Debug Rebuild",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"ClotEditor",
+					"Win64",
+					"Debug",
+					"Z:\\Dev\\UE5Games\\Clot\\Clot.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"ClotEditor Win64 Debug Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "Z:\\Program Files\\EpicGames\\UE\\UE_5.3"
+				}
+			},
+			{
+				"label": "ClotEditor Win64 Debug Clean",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+				"args": [
+					"ClotEditor",
+					"Win64",
+					"Debug",
+					"Z:\\Dev\\UE5Games\\Clot\\Clot.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "Z:\\Program Files\\EpicGames\\UE\\UE_5.3"
+				}
+			},
+			{
+				"label": "ClotEditor Win64 DebugGame Build",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"ClotEditor",
+					"Win64",
+					"DebugGame",
+					"Z:\\Dev\\UE5Games\\Clot\\Clot.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "Z:\\Program Files\\EpicGames\\UE\\UE_5.3"
+				}
+			},
+			{
+				"label": "ClotEditor Win64 DebugGame Rebuild",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"ClotEditor",
+					"Win64",
+					"DebugGame",
+					"Z:\\Dev\\UE5Games\\Clot\\Clot.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"ClotEditor Win64 DebugGame Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "Z:\\Program Files\\EpicGames\\UE\\UE_5.3"
+				}
+			},
+			{
+				"label": "ClotEditor Win64 DebugGame Clean",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+				"args": [
+					"ClotEditor",
+					"Win64",
+					"DebugGame",
+					"Z:\\Dev\\UE5Games\\Clot\\Clot.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "Z:\\Program Files\\EpicGames\\UE\\UE_5.3"
+				}
+			},
+			{
+				"label": "ClotEditor Win64 Development Build",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"ClotEditor",
+					"Win64",
+					"Development",
+					"Z:\\Dev\\UE5Games\\Clot\\Clot.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "Z:\\Program Files\\EpicGames\\UE\\UE_5.3"
+				}
+			},
+			{
+				"label": "ClotEditor Win64 Development Rebuild",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"ClotEditor",
+					"Win64",
+					"Development",
+					"Z:\\Dev\\UE5Games\\Clot\\Clot.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"ClotEditor Win64 Development Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "Z:\\Program Files\\EpicGames\\UE\\UE_5.3"
+				}
+			},
+			{
+				"label": "ClotEditor Win64 Development Clean",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+				"args": [
+					"ClotEditor",
+					"Win64",
+					"Development",
+					"Z:\\Dev\\UE5Games\\Clot\\Clot.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "Z:\\Program Files\\EpicGames\\UE\\UE_5.3"
+				}
+			}
+		]
+	},
+	"launch": {
+		"version": "0.2.0",
+		"configurations": [
+			{
+				"name": "Launch Clot (Debug)",
+				"request": "launch",
+				"program": "Z:\\Dev\\UE5Games\\Clot\\Binaries\\Win64\\UnrealGame-Win64-Debug.exe",
+				"preLaunchTask": "Clot Win64 Debug Build",
+				"args": [
+				],
+				"cwd": "Z:\\Program Files\\EpicGames\\UE\\UE_5.3",
+				"stopAtEntry": false,
+				"console": "externalTerminal",
+				"type": "cppvsdbg",
+				"visualizerFile": "Z:\\Program Files\\EpicGames\\UE\\UE_5.3\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
+				"sourceFileMap": {
+					"D:\\build\\++UE5\\Sync": "Z:\\Program Files\\EpicGames\\UE\\UE_5.3"
+				}
+			},
+			{
+				"name": "Launch Clot (DebugGame)",
+				"request": "launch",
+				"program": "Z:\\Dev\\UE5Games\\Clot\\Binaries\\Win64\\UnrealGame-Win64-DebugGame.exe",
+				"preLaunchTask": "Clot Win64 DebugGame Build",
+				"args": [
+				],
+				"cwd": "Z:\\Program Files\\EpicGames\\UE\\UE_5.3",
+				"stopAtEntry": false,
+				"console": "externalTerminal",
+				"type": "cppvsdbg",
+				"visualizerFile": "Z:\\Program Files\\EpicGames\\UE\\UE_5.3\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
+				"sourceFileMap": {
+					"D:\\build\\++UE5\\Sync": "Z:\\Program Files\\EpicGames\\UE\\UE_5.3"
+				}
+			},
+			{
+				"name": "Launch Clot (Development)",
+				"request": "launch",
+				"program": "Z:\\Dev\\UE5Games\\Clot\\Binaries\\Win64\\UnrealGame.exe",
+				"preLaunchTask": "Clot Win64 Development Build",
+				"args": [
+				],
+				"cwd": "Z:\\Program Files\\EpicGames\\UE\\UE_5.3",
+				"stopAtEntry": false,
+				"console": "externalTerminal",
+				"type": "cppvsdbg",
+				"visualizerFile": "Z:\\Program Files\\EpicGames\\UE\\UE_5.3\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
+				"sourceFileMap": {
+					"D:\\build\\++UE5\\Sync": "Z:\\Program Files\\EpicGames\\UE\\UE_5.3"
+				}
+			},
+			{
+				"name": "Launch Clot (Test)",
+				"request": "launch",
+				"program": "Z:\\Dev\\UE5Games\\Clot\\Binaries\\Win64\\UnrealGame-Win64-Test.exe",
+				"preLaunchTask": "Clot Win64 Test Build",
+				"args": [
+				],
+				"cwd": "Z:\\Program Files\\EpicGames\\UE\\UE_5.3",
+				"stopAtEntry": false,
+				"console": "externalTerminal",
+				"type": "cppvsdbg",
+				"visualizerFile": "Z:\\Program Files\\EpicGames\\UE\\UE_5.3\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
+				"sourceFileMap": {
+					"D:\\build\\++UE5\\Sync": "Z:\\Program Files\\EpicGames\\UE\\UE_5.3"
+				}
+			},
+			{
+				"name": "Launch Clot (Shipping)",
+				"request": "launch",
+				"program": "Z:\\Dev\\UE5Games\\Clot\\Binaries\\Win64\\UnrealGame-Win64-Shipping.exe",
+				"preLaunchTask": "Clot Win64 Shipping Build",
+				"args": [
+				],
+				"cwd": "Z:\\Program Files\\EpicGames\\UE\\UE_5.3",
+				"stopAtEntry": false,
+				"console": "externalTerminal",
+				"type": "cppvsdbg",
+				"visualizerFile": "Z:\\Program Files\\EpicGames\\UE\\UE_5.3\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
+				"sourceFileMap": {
+					"D:\\build\\++UE5\\Sync": "Z:\\Program Files\\EpicGames\\UE\\UE_5.3"
+				}
+			},
+			{
+				"name": "Launch ClotEditor (Debug)",
+				"request": "launch",
+				"program": "Z:\\Program Files\\EpicGames\\UE\\UE_5.3\\Engine\\Binaries\\Win64\\UnrealEditor-Win64-Debug.exe",
+				"preLaunchTask": "ClotEditor Win64 Debug Build",
+				"args": [
+					"Z:\\Dev\\UE5Games\\Clot\\Clot.uproject"
+				],
+				"cwd": "Z:\\Program Files\\EpicGames\\UE\\UE_5.3",
+				"stopAtEntry": false,
+				"console": "externalTerminal",
+				"type": "cppvsdbg",
+				"visualizerFile": "Z:\\Program Files\\EpicGames\\UE\\UE_5.3\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
+				"sourceFileMap": {
+					"D:\\build\\++UE5\\Sync": "Z:\\Program Files\\EpicGames\\UE\\UE_5.3"
+				}
+			},
+			{
+				"name": "Launch ClotEditor (DebugGame)",
+				"request": "launch",
+				"program": "Z:\\Program Files\\EpicGames\\UE\\UE_5.3\\Engine\\Binaries\\Win64\\UnrealEditor-Win64-DebugGame.exe",
+				"preLaunchTask": "ClotEditor Win64 DebugGame Build",
+				"args": [
+					"Z:\\Dev\\UE5Games\\Clot\\Clot.uproject"
+				],
+				"cwd": "Z:\\Program Files\\EpicGames\\UE\\UE_5.3",
+				"stopAtEntry": false,
+				"console": "externalTerminal",
+				"type": "cppvsdbg",
+				"visualizerFile": "Z:\\Program Files\\EpicGames\\UE\\UE_5.3\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
+				"sourceFileMap": {
+					"D:\\build\\++UE5\\Sync": "Z:\\Program Files\\EpicGames\\UE\\UE_5.3"
+				}
+			},
+			{
+				"name": "Launch ClotEditor (Development)",
+				"request": "launch",
+				"program": "Z:\\Program Files\\EpicGames\\UE\\UE_5.3\\Engine\\Binaries\\Win64\\UnrealEditor.exe",
+				"preLaunchTask": "ClotEditor Win64 Development Build",
+				"args": [
+					"Z:\\Dev\\UE5Games\\Clot\\Clot.uproject"
+				],
+				"cwd": "Z:\\Program Files\\EpicGames\\UE\\UE_5.3",
+				"stopAtEntry": false,
+				"console": "externalTerminal",
+				"type": "cppvsdbg",
+				"visualizerFile": "Z:\\Program Files\\EpicGames\\UE\\UE_5.3\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
+				"sourceFileMap": {
+					"D:\\build\\++UE5\\Sync": "Z:\\Program Files\\EpicGames\\UE\\UE_5.3"
+				}
+			},
+			{
+				"name": "Generate Project Files",
+				"type": "coreclr",
+				"request": "launch",
+				"preLaunchTask": "UnrealBuildTool Win64 Development Build",
+				"program": "Z:\\Program Files\\EpicGames\\UE\\UE_5.3\\Engine\\Build\\BatchFiles\\RunUBT.bat",
+				"args": [
+					"-projectfiles",
+					"-vscode",
+					"-project=Z:\\Dev\\UE5Games\\Clot\\Clot.uproject",
+					"-game",
+					"-engine",
+					"-dotnet"
+				],
+				"console": "externalTerminal",
+				"stopAtEntry": false,
+				"cwd": "Z:\\Program Files\\EpicGames\\UE\\UE_5.3"
+			}
+		]
+	}
+}
