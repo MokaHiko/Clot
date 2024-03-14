@@ -30,7 +30,7 @@ Struggles with UE:
 
  - Abilities should have multiple termination methods aside from completion. Such as Abort, Fail, etc..
  - Abilities would ideally allow for nested processes that can occur in succesion.
-	- Stacking of status effects was a feature I'd like to have implemented but I did not have the time
+ - Stacking of status effects was a feature I'd like to have implemented but I did not have the time
 
 ### Gravity Gun
 
@@ -70,6 +70,6 @@ Quests are AActors. Quests have objectives that are defined via flags
 Notes: 
 
  - I decided not to go with an inheritence based approach as multiple quests may require simmilair functionality. Composition was considered but the current set up is generally better for serialization. 
-	- Unreal has a Json library that would've been a clean choice for game saves, had I more time.
+ - Unreal has a Json library that would've been a clean choice for game saves, had I more time.
  - Singletons are discouraged even more so as the editor keeps static variables between editor plays.
 
