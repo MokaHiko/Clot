@@ -8,12 +8,18 @@
 
 class AClotCharacter;
 
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnPutDown, AClotCharacter*, PutDownCharacter);
+
 UCLASS(Blueprintable, BlueprintType, ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
 class CLOT_API UTP_WeaponComponent : public USkeletalMeshComponent
 {
 	GENERATED_BODY()
 
 public:
+	/** Delegate to whom anyone can subscribe to receive this event */
+	UPROPERTY(BlueprintAssignable, Category = "Interaction")
+	FOnPutDown OnPutDown;
+
 	/** Projectile class to spawn */
 	UPROPERTY(EditDefaultsOnly, Category=Projectile)
 	TSubclassOf<class AClotProjectile> ProjectileClass;
@@ -31,19 +37,19 @@ public:
 	FVector MuzzleOffset;
 
 	/** MappingContext */
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category=Input, meta=(AllowPrivateAccess = "true"))
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category=Input, meta=(AllowPrivateAccess = "true"))
 	class UInputMappingContext* FireMappingContext;
 
 	/** Fire Input Action */
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category=Input, meta=(AllowPrivateAccess = "true"))
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category=Input, meta=(AllowPrivateAccess = "true"))
 	class UInputAction* FireAction;
 
 	/** AltFire Input Action */
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category=Input, meta=(AltlowPrivateAccess = "true"))
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category=Input, meta=(AltlowPrivateAccess = "true"))
 	class UInputAction* AltFireAction;
 
 	/** AltFire Input Action */
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category=Input, meta=(AltlowPrivateAccess = "true"))
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category=Input, meta=(AltlowPrivateAccess = "true"))
 	class UInputAction* DropAction;
 
 	/** Sets default values for this component's properties */
@@ -57,6 +63,15 @@ public:
 	UFUNCTION(BlueprintCallable, Category="Weapon")
 	void Drop();
 
+public:
+	/** Virtual function to be overridden by weapons */
+	UFUNCTION(BlueprintCallable, Category="Weapon")
+	virtual void OnAttach();
+
+	/** Virtual function to be overridden by weapons */
+	UFUNCTION(BlueprintCallable, Category="Weapon")
+	virtual void OnDetach();
+
 	/** Virtual function to be overridden by weapons */
 	UFUNCTION(BlueprintCallable, Category="Weapon")
 	virtual void Fire();
@@ -64,7 +79,6 @@ public:
 	/** Virtual function to be overridden by weapons */
 	UFUNCTION(BlueprintCallable, Category="Weapon")
 	virtual void AltFire();
-
 protected:
 	/** Ends gameplay for this component. */
 	UFUNCTION()

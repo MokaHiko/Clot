@@ -5,6 +5,9 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
 #include "Logging/LogMacros.h"
+
+#include "AbilitySystemComponent.h"
+
 #include "ClotCharacter.generated.h"
 
 class UInputComponent;
@@ -44,7 +47,13 @@ class AClotCharacter : public ACharacter
 	/** Drop Input Action */
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category=Input, meta=(AllowPrivateAccess = "true"))
 	UInputAction* DropAction;
-	
+
+	/** Ability Input Action */
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category=Input, meta=(AllowPrivateAccess = "true"))
+	class UInputAction* AbilityAction;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category=Input, meta=(AllowPrivateAccess = "true"))
+	class UInputAction* Ability2Action;
 public:
 	AClotCharacter();
 
@@ -75,6 +84,14 @@ protected:
 
 	/** Called for looking input */
 	void Look(const FInputActionValue& Value);
+
+	/** Called for abilities*/
+	template<int32 index>
+	void Ability(const FInputActionValue& Value)
+	{
+		GetComponentByClass<UAbilitySystemComponent>()->ActivateAbility(index);
+	}
+
 protected:
 	// APawn interface
 	virtual void SetupPlayerInputComponent(UInputComponent* InputComponent) override;

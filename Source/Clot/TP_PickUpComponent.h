@@ -17,11 +17,15 @@ class CLOT_API UTP_PickUpComponent : public USphereComponent
 	GENERATED_BODY()
 
 public:
+	UTP_PickUpComponent();
+
 	/** Delegate to whom anyone can subscribe to receive this event */
 	UPROPERTY(BlueprintAssignable, Category = "Interaction")
 	FOnPickUp OnPickUp;
 
-	UTP_PickUpComponent();
+	/** Resets component to detect character pick ups*/
+	UFUNCTION(BlueprintCallable, Category="Interaction")
+	void ResetPickUp(AClotCharacter* PutDownCharacter = nullptr);
 protected:
 
 	/** Called when the game starts */

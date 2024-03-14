@@ -17,7 +17,6 @@ UTP_WeaponComponent::UTP_WeaponComponent()
 	MuzzleOffset = FVector(100.0f, 0.0f, 10.0f);
 }
 
-
 void UTP_WeaponComponent::Fire()
 {
 	if (Character == nullptr || Character->GetController() == nullptr)
@@ -103,6 +102,9 @@ void UTP_WeaponComponent::AttachWeapon(AClotCharacter* TargetCharacter)
 			EnhancedInputComponent->BindAction(DropAction, ETriggerEvent::Triggered, this, &UTP_WeaponComponent::Drop);
 		}
 	}
+
+	// Call specialized on attach
+	OnAttach();
 }
 
 void UTP_WeaponComponent::Drop() 
@@ -119,13 +121,29 @@ void UTP_WeaponComponent::Drop()
 		{
 			Subsystem->RemoveMappingContext(FireMappingContext);
 		}
+
+		if (UEnhancedInputComponent* EnhancedInputComponent = Cast<UEnhancedInputComponent>(PlayerController->InputComponent))
+		{
+			EnhancedInputComponent->ClearActionBindings();
+		}
 	}
 
 	Character->SetHasRifle(false);
 
 	FDetachmentTransformRules DetachmentRules(EDetachmentRule::KeepWorld, true);
 	GetOwner()->DetachFromActor(DetachmentRules);
+
+	// Call specialized on detatch
+	OnDetach();
+
+	// Notify that weapon is being put down 
+	OnPutDown.Broadcast(Character);
+	Character = nullptr;
 }
+
+void UTP_WeaponComponent::OnAttach() {}
+
+void UTP_WeaponComponent::OnDetach() {}
 
 void UTP_WeaponComponent::EndPlay(const EEndPlayReason::Type EndPlayReason)
 {

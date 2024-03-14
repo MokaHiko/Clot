@@ -20,10 +20,10 @@ AClotCharacter::AClotCharacter()
 {
 	// Character doesnt have a rifle at start
 	bHasRifle = false;
-	
+
 	// Set size for collision capsule
 	GetCapsuleComponent()->InitCapsuleSize(55.f, 96.0f);
-		
+
 	// Create a CameraComponent	
 	FirstPersonCameraComponent = CreateDefaultSubobject<UCameraComponent>(TEXT("FirstPersonCamera"));
 	FirstPersonCameraComponent->SetupAttachment(GetCapsuleComponent());
@@ -73,6 +73,10 @@ void AClotCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 
 		// Looking
 		EnhancedInputComponent->BindAction(LookAction, ETriggerEvent::Triggered, this, &AClotCharacter::Look);
+
+		// Abilities
+		EnhancedInputComponent->BindAction(AbilityAction, ETriggerEvent::Triggered, this, &AClotCharacter::Ability<0>);
+		EnhancedInputComponent->BindAction(Ability2Action, ETriggerEvent::Triggered, this, &AClotCharacter::Ability<1>);
 	}
 	else
 	{

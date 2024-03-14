@@ -4,6 +4,8 @@
 #include "GameFramework/ProjectileMovementComponent.h"
 #include "Components/SphereComponent.h"
 
+#include "Unit.h"
+
 AClotProjectile::AClotProjectile() 
 {
 	// Use a sphere as a simple collision representation
@@ -34,9 +36,17 @@ AClotProjectile::AClotProjectile()
 void AClotProjectile::OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit)
 {
 	// Only add impulse and destroy projectile if we hit a physics
-	if ((OtherActor != nullptr) && (OtherActor != this) && (OtherComp != nullptr) && OtherComp->IsSimulatingPhysics())
+	if ((OtherActor != nullptr) && (OtherActor != this) && (OtherComp != nullptr))
 	{
-		OtherComp->AddImpulseAtLocation(GetVelocity() * 100.0f, GetActorLocation());
+		if(UUnit* Unit = OtherActor->GetComponentByClass<UUnit>())
+		{
+			Unit->TakeDamage(200.0f, DamageType::Blunt);
+		}
+
+		if(OtherComp->IsSimulatingPhysics())
+		{
+			OtherComp->AddImpulseAtLocation(GetVelocity() * 100.0f, GetActorLocation());
+		}
 
 		Destroy();
 	}
