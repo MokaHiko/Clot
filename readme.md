@@ -1,4 +1,5 @@
 ## Clot Demo:
+	![Alt Text](gifs/GeneralCombat.gif)
 
 ### General Notes 
 	Setup:
@@ -26,10 +27,13 @@
 
 ### Gravity Gun
 
+	![Alt Text](gifs/GravityGun.gif)
+
 	The gravity gun uses a physics handle to deal with moving objects. The crosshair will animate if an object is grabbable. 
 	The conditions for being grabbable is being a movable body and blocking in the grabbable channel.
 
 ### Ability System
+	![Alt Text](gifs/Skills.gif)
 
 	Abilities are AActors managed by the AbilitySystem component. It's a form of cooperative multi tasking simmilair to Unity's coroutines. This allows abilities to have state for continuos buffs but crucially relinquish control over their lifespans and runtime updates.
 
@@ -41,6 +45,8 @@
 		- Unreal has it's own Gameplay Ability System(GAS) that works with networking too, however this seemed a little overkill for this project. 
 
 ### Quest System
+
+	![Alt Text](gifs/Quests.gif)
 
 	Quests are AActors. Quests have a objectives that are defined via flags 
 
